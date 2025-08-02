@@ -1,6 +1,16 @@
 package empresa.com.app.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="usuario")
 public class Usuario {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id_cliente;
 	private String nombre;
 	private String apellidos;
@@ -8,12 +18,14 @@ public class Usuario {
 	private String contrasenia;
 	private String email;
 	private String direccion;
+	private String telefono;
+	private String tipo;
 	
 	public Usuario() {
 	}
 
 	public Usuario(Integer id_cliente, String nombre, String apellidos, String username, String contrasenia,
-			String email, String direccion) {
+			String email, String direccion, String telefono, String tipo) {
 		super();
 		this.id_cliente = id_cliente;
 		this.nombre = nombre;
@@ -22,6 +34,8 @@ public class Usuario {
 		this.contrasenia = contrasenia;
 		this.email = email;
 		this.direccion = direccion;
+		this.telefono = telefono;
+		this.tipo = tipo;
 	}
 
 	public Integer getId_cliente() {
@@ -80,13 +94,30 @@ public class Usuario {
 		this.direccion = direccion;
 	}
 
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [id_cliente=" + id_cliente + ", nombre=" + nombre + ", apellidos=" + apellidos + ", username="
-				+ username + ", contrasenia=" + contrasenia + ", email=" + email + ", direccion=" + direccion + "]";
+				+ username + ", contrasenia=" + contrasenia + ", email=" + email + ", direccion=" + direccion
+				+ ", telefono=" + telefono + ", tipo=" + tipo + "]";
 	}
 
-
+	
 	
 	
 }
