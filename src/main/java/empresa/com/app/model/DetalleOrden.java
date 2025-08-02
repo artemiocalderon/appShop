@@ -8,7 +8,6 @@ public class DetalleOrden {
 	private Integer cantidad;
 	private Double precio;
 	private Double total;
-	private Double totalFinal;
 	public DetalleOrden() {
 	}
 	public DetalleOrden(Integer id_detalle_orden, Integer id_producto, Integer id_orden, String nombre,
